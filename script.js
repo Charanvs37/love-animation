@@ -1,8 +1,9 @@
-// ==========================
-// Floating Hearts
-// ==========================
 const bg = document.querySelector(".hearts-bg");
+const loveText = document.querySelector(".love-text");
 
+// ==========================
+// Floating Hearts Function
+// ==========================
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
@@ -15,8 +16,6 @@ function createHeart() {
     heart.remove();
   }, 6000);
 }
-
-setInterval(createHeart, 400);
 
 
 // ==========================
@@ -58,12 +57,22 @@ soundBtn.addEventListener("click", () => {
 
 
 // ==========================
-// Delayed Text Reveal (SAFE VERSION)
+// Cinematic Reveal Sequence
 // ==========================
 window.addEventListener("load", function () {
-  const loveText = document.querySelector(".love-text");
 
+  // After 2 seconds → fade background
+  setTimeout(function () {
+    document.body.classList.add("reveal-bg");
+  }, 2000);
+
+  // After 4 seconds → show text
   setTimeout(function () {
     loveText.classList.add("show");
-  }, 3000);
+  }, 4000);
+
+  // After 4 seconds → start hearts
+  setTimeout(function () {
+    setInterval(createHeart, 400);
+  }, 4000);
 });
