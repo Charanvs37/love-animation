@@ -7,13 +7,13 @@ body {
   align-items: center;
   background: black;
   font-family: Arial, sans-serif;
+  transition: background 2s ease;
 }
 
 body.reveal-bg {
   background: linear-gradient(-45deg, #ff4e50, #fc913a, #ff6f91, #ff9671);
   background-size: 400% 400%;
   animation: gradientMove 8s ease infinite;
-  transition: background 2s ease;
 }
 
 @keyframes gradientMove {
@@ -23,18 +23,16 @@ body.reveal-bg {
 }
 
 .container {
-  position: relative;
-  z-index: 5;
   text-align: center;
 }
 
 .love-text {
-  font-size: 90px;
+  font-size: 70px;
   font-weight: bold;
   color: white;
   opacity: 0;
-  transform: scale(0.3);
-  transition: opacity 2s ease, transform 2s ease;
+  transform: scale(0.5);
+  transition: 2s ease;
 }
 
 .love-text.show {
@@ -58,23 +56,11 @@ body.reveal-bg {
 }
 
 @keyframes floatUp {
-  0% {
-    transform: translateY(100vh);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-10vh);
-    opacity: 0;
-  }
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
 }
 
 @keyframes confettiFall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(720deg);
-    opacity: 0;
-  }
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
 }
