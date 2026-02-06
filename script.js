@@ -1,4 +1,6 @@
+// ==========================
 // Floating Hearts
+// ==========================
 const bg = document.querySelector(".hearts-bg");
 
 function createHeart() {
@@ -16,7 +18,10 @@ function createHeart() {
 
 setInterval(createHeart, 400);
 
+
+// ==========================
 // Fireworks on Click
+// ==========================
 document.addEventListener("click", function(e) {
   new mojs.Burst({
     left: e.pageX,
@@ -31,7 +36,10 @@ document.addEventListener("click", function(e) {
   }).play();
 });
 
+
+// ==========================
 // Sound Toggle
+// ==========================
 const soundBtn = document.querySelector(".sound");
 const music = document.getElementById("bgMusic");
 
@@ -47,4 +55,13 @@ soundBtn.addEventListener("click", () => {
   }
   isPlaying = !isPlaying;
 });
-git 
+
+
+// ==========================
+// Delayed Text Reveal
+// ==========================
+const loveText = document.querySelector(".love-text");
+
+setTimeout(() => {
+  loveText.classList.add("show");
+}, 3000);
