@@ -58,10 +58,12 @@ soundBtn.addEventListener("click", () => {
 
 
 // ==========================
-// Delayed Text Reveal
+// Delayed Text Reveal (SAFE VERSION)
 // ==========================
-const loveText = document.querySelector(".love-text");
+window.addEventListener("load", function () {
+  const loveText = document.querySelector(".love-text");
 
-setTimeout(() => {
-  loveText.classList.add("show");
-}, 3000);
+  setTimeout(function () {
+    loveText.classList.add("show");
+  }, 3000);
+});
